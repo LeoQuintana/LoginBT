@@ -6,7 +6,7 @@ $(document).ready(function () {
 	$('#form').on('submit', function (e) {
 		console.log();
 		e.preventDefault();
-		if ($('#inputUsuario').val() == credencial.usuario) {
+		if ($('#inputUsuario').val() == credencial.usuario && $('#inputContraseña').val() == credencial.contraseña) {
 			window.alert("si");
 		} else {
 			window.alert("no");
