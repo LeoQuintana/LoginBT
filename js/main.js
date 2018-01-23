@@ -1,11 +1,15 @@
 $(document).ready(function () {
 	var credencial = {
-		usuario: 'Leo Quintana',
+		usuario: 'LeoQuintana',
 		contraseña: '12345678',
 	}
 	$('#form').on('submit', function (e) {
+		console.log();
 		e.preventDefault();
-		credencial.usuario = $('#inputUsuario').val();
-		credencial.contraseña = $('#inputContraseña').val();
-	})
+		if ($('#inputUsuario').val() == credencial.usuario) {
+			window.alert("si");
+		} else {
+			window.alert("no");
+		}
+	})	
 })
