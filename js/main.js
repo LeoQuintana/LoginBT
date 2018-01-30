@@ -3,21 +3,26 @@ $(document).ready(function () {
 		usuario: 'Leo Quintana',
 		contraseña: '12345678',
 	}
+	var users = {
+		usuario: '',
+		contraseña: '',
+	} 
 	$('#form').on('submit', function (e) {
 		e.preventDefault();
-		if ($('#inputUsuario').val() == credencial.usuario && $('#inputContraseña').val() == credencial.contraseña) {
-			window.alert("Correcto, se le redireccionara a la pagina solicitada :)");
-			window.location='index2.html';
+		users.usuario = $('#inputUsuario').val();
+		users.contraseña = $('#inputContraseña').val();
+		console.log(credencial);
+		console.log(users);
+	})
+	$('#form').on('submit', function (e) {
+		e.preventDefault();
+		if (users.usuario == credencial.usuario && users.contraseña == credencial.contraseña) {
+			alert("Correcto, se le redireccionara a la pagina solicitada :)");
+			location='index2.html';
 		} else {
-			window.alert("Contraseña o Usuario incorrecto");
+			alert("Contraseña o Usuario incorrecto ja ja");
 		}
 	})
-	/*$('#form').on('submit', function (e) {
-		e.preventDefault();
-		if ($('#form') == credencial) {
-			alert("si");
-		} else {
-			alert("noo");
-		}
-	})*/	
 })
+
+
